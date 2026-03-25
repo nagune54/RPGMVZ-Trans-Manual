@@ -1,1 +1,0 @@
-# RPGMVZ-Trans-Manual
