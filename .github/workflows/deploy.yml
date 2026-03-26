@@ -2,14 +2,18 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [main] # main 브랜치에 변화가 생기면 실행
+    branches: [main]
 
 permissions:
-  contents: write # gh-pages 브랜치에 쓸 수 있는 권한 부여
+  contents: write
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    # Node.js 24를 강제로 사용하도록 환경 변수 추가
+    env:
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
     steps:
       - uses: actions/checkout@v4
         with:
@@ -18,9 +22,9 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 24 # 최신 노드 버전 사용
           cache: 'npm'
-          cache-dependency-path: manual/package-lock.json # 경로 주의
+          cache-dependency-path: manual/package-lock.json
 
       - name: Install dependencies
         run: |
@@ -34,4 +38,5 @@ jobs:
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           cd manual
+          # 빌드와 배포를 동시에 수행
           npm run deploy
