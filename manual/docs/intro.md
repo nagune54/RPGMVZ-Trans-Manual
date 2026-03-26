@@ -2,46 +2,11 @@
 sidebar_position: 1
 ---
 
-# Tutorial Intro
+# 시작하며
 
-Let's discover **Docusaurus in less than 5 minutes**.
+RPG 메이커 MV가 출시한지 어느덧 10년이 지났다. 시대는 빠르게 흘러 LLM AI가 범람하고, 유니티와 GODOT과 같은 엔진들은 계속해서 발전하고, 웹 기술은 계속해서 변화해왔다.  
+그에 비해 RPG 메이커는 호환성 유지를 위해 여전히 오래된 nw.js를 사용 중이며 그로 인해 여전히 오래된 자바스크립트 기술과 오래된 크로미움 엔진으로 구동되고 있다.  
 
-## Getting Started
+그러나 여전히 RPG 메이커는 소규모 게임 제작에서 대체되지 않고 그 자리를 지키고 있다. itch.io나 일본의 동인 게임 스토어와 같은 인디 게임 플랫폼에는 여전히 RPG 메이커로 제작된 게임들이 활발하게 판매되고 있으며, 커뮤니티에선 지속적으로 플러그인을 개발하고 배포하여 RPG 메이커의 수명을 연장하고 있다.  
 
-Get started by **creating a new site**.
-
-Or **try Docusaurus immediately** with **[docusaurus.new](https://docusaurus.new)**.
-
-### What you'll need
-
-- [Node.js](https://nodejs.org/en/download/) version 20.0 or above:
-  - When installing Node.js, you are recommended to check all checkboxes related to dependencies.
-
-## Generate a new site
-
-Generate a new Docusaurus site using the **classic template**.
-
-The classic template will automatically be added to your project after you run the command:
-
-```bash
-npm init docusaurus@latest my-website classic
-```
-
-You can type this command into Command Prompt, Powershell, Terminal, or any other integrated terminal of your code editor.
-
-The command also installs all necessary dependencies you need to run Docusaurus.
-
-## Start your site
-
-Run the development server:
-
-```bash
-cd my-website
-npm run start
-```
-
-The `cd` command changes the directory you're working with. In order to work with your newly created Docusaurus site, you'll need to navigate the terminal there.
-
-The `npm run start` command builds your website locally and serves it through a development server, ready for you to view at http://localhost:3000/.
-
-Open `docs/intro.md` (this page) and edit some lines: the site **reloads automatically** and displays your changes.
+이 가이드에선 여전히 활발하게 제작되고 있는 해외의 RPG 메이커로 제작된 게임들을 번역하는 방법들에 대해 기초부터 설명하고자 한다.
