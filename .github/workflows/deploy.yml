@@ -10,7 +10,6 @@ permissions:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    # Node.js 24를 강제로 사용하도록 환경 변수 추가
     env:
       FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
@@ -22,7 +21,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 24 # 최신 노드 버전 사용
+          node-version: 24
           cache: 'npm'
           cache-dependency-path: manual/package-lock.json
 
@@ -33,10 +32,12 @@ jobs:
 
       - name: Build and Deploy
         env:
+          # 핵심 수정: GIT_USER를 명시적으로 지정합니다.
+          GIT_USER: nagune54
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           cd manual
-          # 빌드와 배포를 동시에 수행
+          # deploy 명령 실행
           npm run deploy
