@@ -14,6 +14,7 @@ const config = {
   tagline: 'RPG 메이커 MV/MZ로 제작된 게임 번역 가이드',
   favicon: 'img/favicon.ico',
 
+  trailingSlash: false,
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
   future: {
     v4: true, // Improve compatibility with the upcoming Docusaurus v4
