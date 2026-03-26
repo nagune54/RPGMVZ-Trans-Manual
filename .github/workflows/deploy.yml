@@ -32,12 +32,15 @@ jobs:
 
       - name: Build and Deploy
         env:
-          # 핵심 수정: GIT_USER를 명시적으로 지정합니다.
-          GIT_USER: nagune54
+          # 인증을 위해 반드시 필요합니다.
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          
+          # 인증 토큰이 포함된 주소로 원격지 설정을 업데이트합니다.
+          git remote set-url origin https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }}.git
+          
           cd manual
-          # deploy 명령 실행
-          npm run deploy
+          # GIT_USER를 실행 명령어 앞에 붙여줍니다.
+          GIT_USER=nagune54 npm run deploy
